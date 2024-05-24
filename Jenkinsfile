@@ -1,9 +1,14 @@
 pipeline {
     agent any
+    tolls {
+        maven 'maven'
+    }
     stages {
-        stage('Passo 1'){
+        stage('Build'){
             steps {
-                echo 'Hello Word!'
+                sh '
+                mvn clean package -DskipTests "
+                   '
             }
         }
     }
