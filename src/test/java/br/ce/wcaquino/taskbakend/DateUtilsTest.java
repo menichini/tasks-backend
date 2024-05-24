@@ -28,7 +28,7 @@ public class DateUtilsTest {
     @Test
     public void isEquals() {
         LocalDate before = LocalDate.now();
-        boolean result = DateUtils.isEqualOrFutureDate(before);
+        boolean result = DateUtils.isEqualOrFutureDate(equals);
         assertTrue(result);
     }
 
