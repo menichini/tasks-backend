@@ -17,6 +17,7 @@ stages:
   - build_image
   - stop
   - deploy
+  - check
   
 
 construir:
@@ -60,3 +61,10 @@ implantar:
     - docker
   script:
     - docker run -d --name -tasks --rm -e DATABASE_HOST="172.17.0.1" -p 8001:8001 backend
+
+checkar:
+      stage: check
+      script:
+        - sleep 5
+        - curl -v http://172.17.0.1:8001
+        - echo $?
